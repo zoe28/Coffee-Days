@@ -3,14 +3,12 @@ Define Model Classes
 """
 
 from flask_sqlalchemy import SQLAlchemy
-from marshmallow_dataclass import dataclass
 from sqlalchemy.dialects.postgresql import UUID
 import uuid
 
 
 db = SQLAlchemy()
 
-@dataclass
 class User(db.Model):
     """ A user """
 
@@ -26,7 +24,7 @@ class User(db.Model):
     def __repr__(self):
         return f"<User user_id={self.user_id} email={self.email}>"
 
-@dataclass
+
 class Shop(db.Model):
     """ A coffee shop """
 
@@ -42,7 +40,6 @@ class Shop(db.Model):
         return f"<Shop shop_id={self.shop_id} google_map_id={self.google_map_id}>"
 
 
-@dataclass
 class Review(db.Model):
     """ A coffee shop's reviews """
 
