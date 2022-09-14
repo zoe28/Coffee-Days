@@ -6,6 +6,9 @@ from models import connect_to_db, db, User, Shop, Review
 
 app = Flask(__name__)
 
+@app.route("/")
+def index():
+    return 'flask server'
 
 @app.route("/api/user/<user_id>")
 def get_user(user_id):
