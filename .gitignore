@@ -1,4 +1,6 @@
+.next/
 env/
 __pycache__/
+node_modules/
 .pyc
 .DS_Store
