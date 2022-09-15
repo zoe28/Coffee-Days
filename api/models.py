@@ -1,5 +1,5 @@
 """
-Define Model Classes
+Define database models
 """
 
 from flask_sqlalchemy import SQLAlchemy
@@ -79,8 +79,6 @@ def add_example_data():
 
     db.session.add_all([leonard, liz, peter, howl])
     db.session.commit()
-
-
 
 
 def connect_to_db(app):
