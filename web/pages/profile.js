@@ -24,11 +24,27 @@ const Profile = () => {
       })
   }, []) // run this once when the component is first rendered
 
-  /* TODO:
-  1. add a click handler function
-  2. inside the function, use fetch to make a POST request
-  3. pass in firstName, lastName, email as part of the body
-  */
+
+
+  const handleClick = (evt) => {
+    evt.preventDefault();
+    const formInputs ={
+      firstName: setFirstName(e.target.value),
+      lastName: setLastName(e.target.value),
+      email: setEmail(e.target.value),
+    };
+
+    fetch('/api/user/<user_id>', {
+      method: 'POST',
+      body: JSON.stringify(formInputs),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then(Profile);
+    
+  };
 
   return (
     <Container>
@@ -38,9 +54,10 @@ const Profile = () => {
           <Form.Label>First name</Form.Label>
             <Form.Input
               value={firstName}
-              onChange={(e) => {
-                return setFirstName(e.target.value);
-              }}
+              //onChange={(e) => {
+                //return setFirstName(e.target.value);
+              onclick={handleClick} 
+              //}}
             />
         </Form.Field>
 
@@ -66,8 +83,7 @@ const Profile = () => {
 
         <Form.Field kind="group">
           {/*
-          TODO:
-              1. call the click handler to make the POST request
+              call the click handler to make the POST request
           */}
           <Form.Control>
             <Button color="warning">Update</Button>

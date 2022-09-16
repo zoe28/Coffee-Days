@@ -4,7 +4,7 @@ import TopNavbar from "../components/TopNavbar"
 
 import 'bulma/css/bulma.min.css';
 
-// create a functional component
+
 const Reviews = () => {
   return (
     <Container>
