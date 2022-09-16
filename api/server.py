@@ -36,6 +36,25 @@ def get_user(user_id):
     return jsonify_user(user)
 
 
+# TODO: create a POST route that updates an existing user
+@app.route("/api/user/<user_id>", methods=['POST'])
+def update_user(user_id):
+    """ Update data on a user"""
+
+    users = User.query.get(user_id)
+    db.session.commit()
+
+    # success = true/false
+
+    # write some Flask SQLAlchemy code to update a model instance
+    # commit the changes to the database
+
+    return jsonify_user({})
+
+
+# TODO: (future) create a POST route to create a new user
+
+
 if __name__ == "__main__":
     connect_to_db(app)
     app.run(host="0.0.0.0", port=5000, debug=True)
