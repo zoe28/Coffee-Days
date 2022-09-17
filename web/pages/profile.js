@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import TopNavbar from "../components/TopNavbar"
 import { Form, Icon, Block, Button, Container } from 'react-bulma-components';
 
 import 'bulma/css/bulma.min.css';
@@ -7,6 +6,7 @@ import 'bulma/css/bulma.min.css';
 
 const Profile = () => {
   
+  // TODO: add a state variable that will store the user ID from the database
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('');
@@ -17,10 +17,10 @@ const Profile = () => {
       .then((res) => res.json())
       .then((jsonData) => {
         console.log(jsonData)
-        // const {first_name, last_name, email} = jsonData; // destructuring
         setFirstName(jsonData.first_name)
         setLastName(jsonData.last_name)
         setEmail(jsonData.email)
+        // TODO: set the user ID from the database
       })
   }, []) // run this once when the component is first rendered
 
@@ -28,12 +28,14 @@ const Profile = () => {
 
   const handleClick = (evt) => {
     evt.preventDefault();
+
     const formInputs ={
       firstName: setFirstName(e.target.value),
       lastName: setLastName(e.target.value),
       email: setEmail(e.target.value),
     };
 
+    // TODO: you'll need to use a template string to replace `<user_id>` with a variable
     fetch('/api/user/<user_id>', {
       method: 'POST',
       body: JSON.stringify(formInputs),
@@ -41,23 +43,28 @@ const Profile = () => {
         'Content-Type': 'application/json',
       },
     })
-      .then((response) => response.json())
-      .then(Profile);
+      // Don't worry about handling the POST response for now
+      // .then((response) => response.json())
+      // .then(Profile);
     
   };
 
   return (
     <Container>
-      <TopNavbar />
       <form>
         <Form.Field>
           <Form.Label>First name</Form.Label>
             <Form.Input
               value={firstName}
-              //onChange={(e) => {
-                //return setFirstName(e.target.value);
-              onclick={handleClick} 
-              //}}
+              onChange={(e) => {
+                return setFirstName(e.target.value);
+              }}
+                /* Warning!
+                  Don't put the click handler on this input component,
+                  because it will make the API update call each time you click the input.
+                  Instead add the click handler on the button component below
+                */
+              onclick={handleClick}
             />
         </Form.Field>
 
@@ -82,11 +89,14 @@ const Profile = () => {
         </Form.Field>
 
         <Form.Field kind="group">
-          {/*
-              call the click handler to make the POST request
-          */}
+          
           <Form.Control>
-            <Button color="warning">Update</Button>
+            <Button
+              color="warning"
+              /*add the click handler prop to this button*/
+            >
+              Update
+            </Button>
           </Form.Control>
         </Form.Field>
       </form>
