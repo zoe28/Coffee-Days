@@ -1,6 +1,6 @@
 """Server for coffee shop ratings website."""
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from models import connect_to_db, db, User, Shop, Review
 
 
@@ -12,18 +12,15 @@ def index():
     return 'flask server'
 
 
-def jsonify_user(user):
-    return jsonify({
-        'first_name': user.first_name,
-        'last_name': user.last_name,
-        'email': user.email,
-    })
-
-
 @app.route("/api/user/first")
 def get_first_user():
     first_user = User.query.first()
-    return jsonify_user(first_user)
+    # TODO: return the user id
+    return {
+        'first_name': first_user.first_name,
+        'last_name': first_user.last_name,
+        'email': first_user.email,
+    }
 
 
 # GET a user
@@ -33,7 +30,12 @@ def get_user(user_id):
 
     user = User.query.get(user_id)
     print(user)
-    return jsonify_user(user)
+    # TODO: return the user id
+    return {
+        'first_name': user.first_name,
+        'last_name': user.last_name,
+        'email': user.email,
+    }
 
 
 # TODO: create a POST route that updates an existing user
@@ -44,15 +46,37 @@ def update_user(user_id):
     users = User.query.get(user_id)
     db.session.commit()
 
-    # success = true/false
+    success = True # False
+    error_message = ''
 
     # write some Flask SQLAlchemy code to update a model instance
     # commit the changes to the database
+    # https://stackoverflow.com/questions/6699360/flask-sqlalchemy-update-a-rows-information
 
-    return jsonify_user({})
+    return {
+        success: success,
+        error_message: error_message,
+    }
 
 
-# TODO: (future) create a POST route to create a new user
+@app.route("/api/user/create", methods=['POST'])
+def create_user():
+    """ Create a new user"""
+
+    data = request.get_json()
+    # create a new instance of the User model
+    user = User(first_name=data['first_name'], last_name=data['last_name'], email=data['email'])
+
+    db.session.add(user)
+    db.session.commit()
+   
+    # http response with json data
+    return {
+        'id': user.user_id,
+        'first_name': user.first_name,
+        'last_name': user.last_name,
+        'email': user.email,
+    }
 
 
 if __name__ == "__main__":

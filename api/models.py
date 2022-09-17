@@ -17,7 +17,7 @@ class User(db.Model):
     user_id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     first_name = db.Column(db.String(64), nullable=False)
     last_name = db.Column(db.String(64), nullable=False)
-    email = db.Column(db.String(128), nullable=False)
+    email = db.Column(db.String(128), nullable=False, unique=True)
 
     reviews = db.relationship("Review", back_populates="user")
 
@@ -76,6 +76,8 @@ def add_example_data():
     liz = User(first_name='Liz', last_name='Suuu', email="lizss@gmail.com")
     peter = User(first_name='Peter', last_name='Collins', email="peter@gmail.com")
     howl = User(first_name='Howl', last_name='Takuya', email="howl@gmail.com")
+
+    # TODO: add sample Shop data with the Google Maps `result.place_id`
 
     db.session.add_all([leonard, liz, peter, howl])
     db.session.commit()
