@@ -29,6 +29,9 @@ const TopNavbar = () => {
             <Navbar.Item href="/profile">
               Profile
             </Navbar.Item>
+            <Navbar.Item href="/sign-up">
+              Sign Up
+            </Navbar.Item>
           </Navbar.Container>
         </Navbar.Menu>
       </Container>
