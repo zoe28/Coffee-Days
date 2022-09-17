@@ -5,3 +5,5 @@ node_modules/
 .pyc
 .DS_Store
 settings.json
+.env
+.env.local
