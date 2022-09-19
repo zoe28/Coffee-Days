@@ -43,10 +43,6 @@ const Profile = () => {
         'Content-Type': 'application/json',
       },
     })
-      // Don't worry about handling the POST response for now
-      // .then((response) => response.json())
-      // .then(Profile);
-    
   };
 
   return (
@@ -59,11 +55,6 @@ const Profile = () => {
               onChange={(e) => {
                 return setFirstName(e.target.value);
               }}
-                /* Warning!
-                  Don't put the click handler on this input component,
-                  because it will make the API update call each time you click the input.
-                  Instead add the click handler on the button component below
-                */
               onclick={handleClick}
             />
         </Form.Field>

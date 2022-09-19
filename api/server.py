@@ -48,11 +48,7 @@ def update_user(user_id):
 
     success = True # False
     error_message = ''
-
-    # write some Flask SQLAlchemy code to update a model instance
-    # commit the changes to the database
-    # https://stackoverflow.com/questions/6699360/flask-sqlalchemy-update-a-rows-information
-
+    
     return {
         success: success,
         error_message: error_message,
@@ -64,6 +60,7 @@ def create_user():
     """ Create a new user"""
 
     data = request.get_json()
+    print(data)
     # create a new instance of the User model
     user = User(first_name=data['first_name'], last_name=data['last_name'], email=data['email'])
 

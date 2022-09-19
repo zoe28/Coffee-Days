@@ -10,6 +10,36 @@ const SignUp = () => {
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('');
 
+
+  const handleClick = (evt) => {
+    evt.preventDefault();
+
+    const body = {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+    };
+
+    fetch('/api/user/create', {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then((response) => {
+      if (response.status === 200) {
+        alert("User created!")
+      }
+      return response.json()
+    })
+    .then((data) => {
+      console.log(data)
+    })
+  };
+
+
+
   return (
     <Container>
       <Heading>Sign Up</Heading>
@@ -44,14 +74,16 @@ const SignUp = () => {
             />
         </Form.Field>
 
-        <Form.Control>
-            <Button
-              color="warning"
-              /*add the click handler prop to this button*/
-            >
-              Sign Up
-            </Button>
-          </Form.Control>
+        
+        <Button
+            color="warning"
+            onClick={(evt) => {
+              return handleClick(evt);
+            }}
+          >
+            Sign Up
+        </Button>
+       
 
       </form>
     </Container>
