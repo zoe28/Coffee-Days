@@ -15,8 +15,8 @@ def index():
 @app.route("/api/user/first")
 def get_first_user():
     first_user = User.query.first()
-    # TODO: return the user id
     return {
+        'id': first_user.user_id,
         'first_name': first_user.first_name,
         'last_name': first_user.last_name,
         'email': first_user.email,
@@ -30,28 +30,39 @@ def get_user(user_id):
 
     user = User.query.get(user_id)
     print(user)
-    # TODO: return the user id
     return {
+        'id': user.user_id,
         'first_name': user.first_name,
         'last_name': user.last_name,
         'email': user.email,
     }
 
 
-# TODO: create a POST route that updates an existing user
 @app.route("/api/user/<user_id>", methods=['POST'])
 def update_user(user_id):
     """ Update data on a user"""
 
-    users = User.query.get(user_id)
+    # get fetch body from json
+    request_body = request.get_json()
+
+    # set a variable called user and equals to User database's user_id
+    user = User.query.get(user_id)
+    print(user)
+
+    #user.name = 'New Name'
+    print(request_body)
+    user.first_name = request_body['first_name']
+    user.last_name =  request_body['last_name']
+    user.email =  request_body['email']
+
     db.session.commit()
 
     success = True # False
     error_message = ''
-    
+
     return {
-        success: success,
-        error_message: error_message,
+        'success': success,
+        'error_message': error_message,
     }
 
 
@@ -59,10 +70,12 @@ def update_user(user_id):
 def create_user():
     """ Create a new user"""
 
-    data = request.get_json()
-    print(data)
+    # converts POST request body into python dictionary
+    request_body = request.get_json()
+    print(request_body)
+
     # create a new instance of the User model
-    user = User(first_name=data['first_name'], last_name=data['last_name'], email=data['email'])
+    user = User(first_name=request_body['first_name'], last_name=request_body['last_name'], email=request_body['email'])
 
     db.session.add(user)
     db.session.commit()

@@ -6,7 +6,7 @@ import 'bulma/css/bulma.min.css';
 
 const Profile = () => {
   
-  // TODO: add a state variable that will store the user ID from the database
+  const [userId, setUserId] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('');
@@ -17,10 +17,10 @@ const Profile = () => {
       .then((res) => res.json())
       .then((jsonData) => {
         console.log(jsonData)
+        setUserId(jsonData.id)
         setFirstName(jsonData.first_name)
         setLastName(jsonData.last_name)
-        setEmail(jsonData.email)
-        // TODO: set the user ID from the database
+        setEmail(jsonData.email) 
       })
   }, []) // run this once when the component is first rendered
 
@@ -29,20 +29,20 @@ const Profile = () => {
   const handleClick = (evt) => {
     evt.preventDefault();
 
-    const formInputs ={
-      firstName: setFirstName(e.target.value),
-      lastName: setLastName(e.target.value),
-      email: setEmail(e.target.value),
+    const body = {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
     };
 
-    // TODO: you'll need to use a template string to replace `<user_id>` with a variable
-    fetch('/api/user/<user_id>', {
+    fetch(`/api/user/${userId}`, {
       method: 'POST',
-      body: JSON.stringify(formInputs),
+      body: JSON.stringify(body),
       headers: {
         'Content-Type': 'application/json',
       },
     })
+    .then((response) => response.json())
   };
 
   return (
@@ -55,7 +55,6 @@ const Profile = () => {
               onChange={(e) => {
                 return setFirstName(e.target.value);
               }}
-              onclick={handleClick}
             />
         </Form.Field>
 
@@ -84,7 +83,9 @@ const Profile = () => {
           <Form.Control>
             <Button
               color="warning"
-              /*add the click handler prop to this button*/
+              onClick={(evt) => {
+                return handleClick(evt);
+              }}
             >
               Update
             </Button>
