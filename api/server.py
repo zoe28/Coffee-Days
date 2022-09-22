@@ -38,6 +38,7 @@ def get_user(user_id):
     }
 
 
+# Update new data on a existing user
 @app.route("/api/user/<user_id>", methods=['POST'])
 def update_user(user_id):
     """ Update data on a user"""
@@ -54,7 +55,7 @@ def update_user(user_id):
     user.first_name = request_body['first_name']
     user.last_name =  request_body['last_name']
     user.email =  request_body['email']
-
+    
     db.session.commit()
 
     success = True # False
@@ -66,6 +67,7 @@ def update_user(user_id):
     }
 
 
+# Create a new user to database
 @app.route("/api/user/create", methods=['POST'])
 def create_user():
     """ Create a new user"""
