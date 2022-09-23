@@ -6,7 +6,6 @@ import styles from '../styles/index.module.css';
 
 import { useMemo, useState } from 'react';
 
-
 const Map = () => {
 
   const gmaps = window.google.maps;
@@ -22,14 +21,17 @@ const Map = () => {
     lat: 0,
     lng: 0
   });
+
   const [selectedResult, setSelectedResult] = useState();
 
-  const onMapLoad = (map) => {
-    const sanFrancisco = new gmaps.LatLng(37.763, -122.435);
+  const [googleMap, setGoogleMap] = useState();
 
+
+  const getGoogleMapsPlaces = (map, location) => {
+    
     // construct the query/search that the GMaps API to return to me
     const request = {
-      location: sanFrancisco,
+      location: location,
       radius: 2000,
       query: "coffee"
     }
@@ -52,6 +54,24 @@ const Map = () => {
     });
   }
 
+  const handleMapLoad = (map) => {
+    console.log(map);
+    setGoogleMap(map);
+
+    // 1. refactor the following code into a function
+
+    // 2. call getGoogleMapsPlaces(...)
+    const sanFrancisco = new gmaps.LatLng(37.763, -122.435);
+    getGoogleMapsPlaces(map, sanFrancisco)    
+  }
+
+  const handleDragEnd = () => {
+    console.log(googleMap.center.lat(), googleMap.center.lng())
+    // 3. call getGoogleMapsPlaces(...)
+    const center = new gmaps.LatLng(googleMap.center.lat(), googleMap.center.lng())
+    getGoogleMapsPlaces(googleMap, center)
+  }
+
   const onMarkerClick = (mapMouseEvent, result) => {
     console.log(mapMouseEvent);
     // set `selectedResult` to the result that corresponds with the marker that I clicked on
@@ -71,8 +91,9 @@ const Map = () => {
       GoogleMap zoom={13} 
       center={center} 
       mapContainerClassName={styles.mapContainer}
-      // when the component has finished rendering, call onMapLoad()
-      onLoad={onMapLoad}
+      // when the component has finished rendering, call handleMapLoad()
+      onLoad={handleMapLoad}
+      onDragEnd={handleDragEnd}
     >
       {/* loop through the list of results (state variable) and render a marker for each one */}
       {results.map((result) => {
@@ -97,6 +118,7 @@ const Map = () => {
               url:'/coffee-marker.png',
               scaledSize: new window.google.maps.Size(55,55),
             }}
+            key={result.place_id}
           />
         )
       })}
