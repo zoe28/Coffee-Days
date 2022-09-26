@@ -1,3 +1,5 @@
+import { useMemo, useState } from "react";
+import Link from "next/link";
 import { Button, Container, Heading } from "react-bulma-components";
 import {
   GoogleMap,
@@ -7,8 +9,6 @@ import {
 } from "@react-google-maps/api";
 
 import styles from "../styles/map.module.css";
-
-import { useMemo, useState } from "react";
 
 const MapContainer = () => {
   const gmaps = window.google.maps;
@@ -138,6 +138,7 @@ const MapContainer = () => {
             <h4>{selectedResult.name.split("-")[0]}</h4>
             {/* the rating of the selected coffee shop */}
             <div>Rating: {selectedResult.rating}</div>
+            <Link href={`/shop/${selectedResult.place_id}`}>More details</Link>
           </>
         </InfoWindowF>
       )}
