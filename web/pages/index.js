@@ -1,13 +1,16 @@
-import { Button, Container, Heading } from 'react-bulma-components';
-import { GoogleMap, useLoadScript, InfoWindowF, MarkerF } from '@react-google-maps/api';
+import { Button, Container, Heading } from "react-bulma-components";
+import {
+  GoogleMap,
+  useLoadScript,
+  InfoWindowF,
+  MarkerF,
+} from "@react-google-maps/api";
 
-import 'bulma/css/bulma.min.css';
-import styles from '../styles/index.module.css';
+import styles from "../styles/map.module.css";
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState } from "react";
 
-const Map = () => {
-
+const MapContainer = () => {
   const gmaps = window.google.maps;
 
   // create a state variable to store the list of results returned by the GMaps Places TextSearch API
@@ -19,31 +22,28 @@ const Map = () => {
   // create a state variable to control where the InfoMarker (white pop-up) is displayed
   const [infoMarkerLocation, setInfoMarkerLocation] = useState({
     lat: 0,
-    lng: 0
+    lng: 0,
   });
 
   const [selectedResult, setSelectedResult] = useState();
 
   const [googleMap, setGoogleMap] = useState();
 
-
   const getGoogleMapsPlaces = (map, location) => {
-    
     // construct the query/search that the GMaps API to return to me
     const request = {
       location: location,
       radius: 2000,
-      query: "coffee"
-    }
+      query: "coffee",
+    };
 
-    // construct a "service" object that will help me make the request, 
+    // construct a "service" object that will help me make the request,
     // PlacesService is a class that has methods to help me make requests to the google maps api
     const service = new gmaps.places.PlacesService(map);
 
     // this is similar to a `fetch()` call, also it's using a callback function instead of promises (.then().then())
     //                 query    callback function parameters
     service.textSearch(request, (results, status) => {
-
       // check if there were no errors with API call and check that `results` is defined, which means I have data back from the API
       if (status === gmaps.places.PlacesServiceStatus.OK && results) {
         // update the `results` state variable so that can use it to render markers
@@ -52,7 +52,7 @@ const Map = () => {
         console.log({ results });
       }
     });
-  }
+  };
 
   const handleMapLoad = (map) => {
     console.log(map);
@@ -62,15 +62,18 @@ const Map = () => {
 
     // 2. call getGoogleMapsPlaces(...)
     const sanFrancisco = new gmaps.LatLng(37.763, -122.435);
-    getGoogleMapsPlaces(map, sanFrancisco)    
-  }
+    getGoogleMapsPlaces(map, sanFrancisco);
+  };
 
   const handleDragEnd = () => {
-    console.log(googleMap.center.lat(), googleMap.center.lng())
+    console.log(googleMap.center.lat(), googleMap.center.lng());
     // 3. call getGoogleMapsPlaces(...)
-    const center = new gmaps.LatLng(googleMap.center.lat(), googleMap.center.lng())
-    getGoogleMapsPlaces(googleMap, center)
-  }
+    const center = new gmaps.LatLng(
+      googleMap.center.lat(),
+      googleMap.center.lng()
+    );
+    getGoogleMapsPlaces(googleMap, center);
+  };
 
   const onMarkerClick = (mapMouseEvent, result) => {
     console.log(mapMouseEvent);
@@ -80,16 +83,15 @@ const Map = () => {
     setInfoMarkerLocation(mapMouseEvent.latLng);
     // update the state variable to make the InfoMarker visible
     setIsInfoMarkerVisible(true);
-
   };
 
   // temporary variable for where the map should start
-  const center = useMemo(() => ({lat:37.763, lng:-122.435}), []);
+  const center = useMemo(() => ({ lat: 37.763, lng: -122.435 }), []);
 
   return (
-    <
-      GoogleMap zoom={13} 
-      center={center} 
+    <GoogleMap
+      zoom={13}
+      center={center}
       mapContainerClassName={styles.mapContainer}
       // when the component has finished rendering, call handleMapLoad()
       onLoad={handleMapLoad}
@@ -98,11 +100,11 @@ const Map = () => {
       {/* loop through the list of results (state variable) and render a marker for each one */}
       {results.map((result) => {
         console.log({ result });
-        
+
         // create a temporary variable to store the geolocation (latitude, longitude) each this result
         const position = {
           lat: result.geometry.location.lat(),
-          lng: result.geometry.location.lng()
+          lng: result.geometry.location.lng(),
         };
 
         // create a temporary variable to check whether this result's `place_id` is the same as the result stored in the `selectedResult` state variable
@@ -110,17 +112,17 @@ const Map = () => {
         const isSelected = result.place_id === selectedResult?.place_id;
 
         return (
-          <MarkerF 
+          <MarkerF
             position={position}
             animation={isSelected && gmaps.Animation.BOUNCE}
             onClick={(event) => onMarkerClick(event, result)}
             icon={{
-              url:'/coffee-marker.png',
-              scaledSize: new window.google.maps.Size(55,55),
+              url: "/coffee-marker.png",
+              scaledSize: new window.google.maps.Size(55, 55),
             }}
             key={result.place_id}
           />
-        )
+        );
       })}
 
       {isInfoMarkerVisible && (
@@ -141,24 +143,15 @@ const Map = () => {
       )}
     </GoogleMap>
   );
-}
+};
 
 // create a functional component
 const Index = () => {
-
-  const { isLoaded } = useLoadScript({
-    libraries: ["places"],
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-  })
-
-  // show "Loading..." while GMaps JS is loading
-  if (!isLoaded) return <div>Loading...</div>;
-
   return (
-      <Container>
-        <Heading className="is-1">Coffee Days</Heading>
-        <Map />
-      </Container>
+    <Container>
+      <Heading size={1}>Coffee Days</Heading>
+      <MapContainer />
+    </Container>
   );
 };
 
