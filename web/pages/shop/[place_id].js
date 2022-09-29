@@ -25,7 +25,7 @@ const Shop = () => {
     const service = new gmaps.places.PlacesService(map);
 
     const request = {
-      placeId: "ChIJSy28upiAhYARkoxpzFnW7b4",
+      placeId: place_id,
       files: ["name", "formatted_address", "place_id", "geometry"],
     };
 
