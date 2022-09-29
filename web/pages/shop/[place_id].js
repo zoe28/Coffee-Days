@@ -18,6 +18,7 @@ const Shop = () => {
 
   const [place, setPlace] = useState({});
   const [placeLocation, setPlaceLocation] = useState({ lat: 0, lng: 0 });
+  const [rating, setRating] = useState(0);
 
   const handleMapLoad = (map) => {
     console.log({ map });
@@ -26,18 +27,21 @@ const Shop = () => {
 
     const request = {
       placeId: place_id,
-      files: ["name", "formatted_address", "place_id", "geometry"],
+      files: ["name", "formatted_address", "place_id", "geometry", "rating"],
     };
 
     service.getDetails(request, (place, status) => {
       console.log({ place, status });
       console.log(gmaps.places.PlacesServiceStatus.OK);
+
       if (status === gmaps.places.PlacesServiceStatus.OK && place) {
         const location = place.geometry.location;
         const placeLatLng = { lat: location.lat(), lng: location.lng() };
+        const ratings = place.geometry.rating;
         console.log({ placeLatLng });
         setPlace(place);
         setPlaceLocation(placeLatLng);
+        setRating(ratings);
       }
     });
   };
@@ -45,6 +49,9 @@ const Shop = () => {
   return (
     <Container>
       <Heading>{place.name}</Heading>
+      <Heading color="warning" subtitle>
+        Rating: {place.rating}
+      </Heading>
       <Heading
         subtitle
         dangerouslySetInnerHTML={{ __html: place.adr_address }}
