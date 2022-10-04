@@ -1,4 +1,10 @@
-import { Button, Container, Heading, Columns } from "react-bulma-components";
+import {
+  Button,
+  Container,
+  Form,
+  Heading,
+  Columns,
+} from "react-bulma-components";
 import {
   GoogleMap,
   useLoadScript,
@@ -7,6 +13,7 @@ import {
 } from "@react-google-maps/api";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 import styles from "../../styles/map.module.css";
@@ -42,6 +49,8 @@ const Shop = () => {
         setPlace(place);
         setPlaceLocation(placeLatLng);
         setRating(ratings);
+
+        // TODO: make a fetch() to POST the place_id to /api/shop/<place_id>
       }
     });
   };
@@ -75,7 +84,18 @@ const Shop = () => {
           </GoogleMap>
         </Columns.Column>
         <Columns.Column>
-          <Heading subtitle>Reviews</Heading>
+          <Heading subtitle>
+            Reviews
+            <form>
+              <Form.Field>
+                <Form.Control>
+                  <Link href={`/review/${place_id}`}>
+                    <Button color="warning">Add a review </Button>
+                  </Link>
+                </Form.Control>
+              </Form.Field>
+            </form>
+          </Heading>
         </Columns.Column>
       </Columns>
     </Container>
