@@ -91,6 +91,40 @@ def create_user():
     }
 
 
+@app.route("/api/shop/<place_id>", methods=['POST'])
+def create_shop():
+    # TODO: implement this
+    return {
+        
+    }
+
+
+@app.route("/api/review/<place_id>", methods=['POST'])
+def create_review():
+    """ Create a new review"""
+    
+    request_body = request.get_json()
+
+    review = Review(
+        review_id=request_body['review_id'], 
+        rating_score=request_body['rating_score'], 
+        comment=request_body['comment'], 
+        user_id=request_body['user_id'], 
+        shop_id=request_body['shop_id']
+    )
+
+    db.session.add(review)
+    db.session.commit()
+
+    return {
+        'review_id': review.review_id,
+        'rating_score': review.rating_score,
+        'comment': review.comment,
+        'user_id': review.user_id,
+        'shop_id': review.shop_id
+    }
+
+
 if __name__ == "__main__":
     connect_to_db(app)
     app.run(host="0.0.0.0", port=5000, debug=True)
