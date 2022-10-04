@@ -23,7 +23,6 @@ const TopNavbar = () => {
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Container className="navbar-end" align="end">
-            <Navbar.Item href="/reviews">Reviews</Navbar.Item>
             <Navbar.Item href="/profile">Profile</Navbar.Item>
             <Navbar.Item href="/sign-up">Sign Up</Navbar.Item>
           </Navbar.Container>
