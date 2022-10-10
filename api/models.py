@@ -77,9 +77,55 @@ def add_example_data():
     peter = User(first_name='Peter', last_name='Collins', email="peter@gmail.com")
     howl = User(first_name='Howl', last_name='Takuya', email="howl@gmail.com")
 
-    # TODO: add sample Shop data with the Google Maps `result.place_id`
 
-    db.session.add_all([leonard, liz, peter, howl])
+    # add sample Shop data with the Google Maps `result.place_id`
+    # couldn't get some coffee shop's id on the map
+    blue_bottle_coffee = Shop(google_map_id="ChIJ1VGyjmCBhYAR_pOL0q5shVs") 
+    ritual_coffee_roasters = Shop(google_map_id="ChIJf2VE9ayAhYARcESkjlMUzfU") 
+    andytown_coffee_roasters = Shop(google_map_id="ChIJee4DupqHhYARXadb2DlBtr8") 
+    philz_coffee = Shop(google_map_id="ChIJcfQ5MRp-j4ARn3eA9EH16OA") 
+    coffee_movement = Shop(google_map_id="ChIJoTMb3PKAhYARsXkQt469sBw") 
+    # sightglass_coffee = Shop(google_map_id="") 
+
+    # add sample Review data
+    review1 = Review(
+        rating_score = 5,
+        comment = "This shop serve great espresso, which is well prepared and on par with other specialty shops, but what really makes them stand out are the coffee creations they serve.",
+        user_id = leonard.id, # "fc06e892-6c5a-42e4-ac53-d4842e4936e1"
+        shop_id = blue_bottle_coffee.shop_id
+    )
+
+    review2 = Review(
+        rating_score = 5,
+        comment = "This is my favourite coffee shop in town.  The espresso is so balanced.  I would describe it as a very sophisticated flavour, you can clearly distinguish several layers of taste.",
+        user_id = leonard.id, # "fc06e892-6c5a-42e4-ac53-d4842e4936e1",
+        shop_id = andytown_coffee_roasters.shop_id
+    )
+
+    review3 = Review(
+        rating_score = 5,
+        comment = "This shop is absolutely a (hidden) gem! Easily one of my top two coffee shops in the area and I have been to a few dozen.",
+        user_id = Happy.id, # "5c23b423-87f7-42aa-a176-ced2159da035",
+        shop_id = coffee_movement.shop_id
+    )
+
+    review4 = Review(
+        rating_score = 3,
+        comment = "Coffee is good but has a long wait",
+        user_id = leonard.id, # "fc06e892-6c5a-42e4-ac53-d4842e4936e1",
+        shop_id = blue_bottle_coffee.shop_id
+    )
+
+    review5 = Review(
+        rating_score = 1,
+        comment = "This shop does not have customer restroom or wifi. Music too loud and super slow service!",
+        user_id = leonard.id, # "fc06e892-6c5a-42e4-ac53-d4842e4936e1",
+        shop_id = ritual_coffee_roasters.shop_id
+    )
+
+
+    db.session.add_all([
+        leonard, liz, peter, howl, ])
     db.session.commit()
 
 

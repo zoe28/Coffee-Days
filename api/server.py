@@ -91,16 +91,30 @@ def create_user():
     }
 
 
+
 @app.route("/api/shop/<place_id>", methods=['POST'])
-def create_shop():
-    # TODO: implement this
+def create_shop(place_id):
+    """ Create a new shop"""
+
+    shop = Shop(
+        google_map_id=place_id
+    )
+    db.session.add(shop)
+    db.session.commit()
     return {
-        
+        "shop_id": shop.shop_id,
+        "google_map_id": shop.google_map_id
     }
 
 
+@app.route("/api/review/<place_id>", methods=['GET'])
+def get_reviews(place_id):
+    # TODO: query get all
+    return Review.query.all(place_id)
+
+
 @app.route("/api/review/<place_id>", methods=['POST'])
-def create_review():
+def create_review(place_id):
     """ Create a new review"""
     
     request_body = request.get_json()
@@ -109,8 +123,8 @@ def create_review():
         review_id=request_body['review_id'], 
         rating_score=request_body['rating_score'], 
         comment=request_body['comment'], 
-        user_id=request_body['user_id'], 
-        shop_id=request_body['shop_id']
+        user_id= "fc06e892-6c5a-42e4-ac53-d4842e4936e1", # 
+        shop_id=place_id,
     )
 
     db.session.add(review)
