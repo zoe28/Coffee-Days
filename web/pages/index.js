@@ -34,7 +34,7 @@ const MapContainer = () => {
     const request = {
       location: location,
       radius: 2000,
-      query: "coffee",
+      query: "espresso", // "coffee"
     };
 
     // construct a "service" object that will help me make the request,
