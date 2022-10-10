@@ -24,6 +24,7 @@ const Shop = () => {
   const { place_id } = router.query;
 
   const [place, setPlace] = useState({});
+  const [placeId, setPlaceId] = useState({});
   const [placeLocation, setPlaceLocation] = useState({ lat: 0, lng: 0 });
   const [rating, setRating] = useState(0);
 
@@ -43,14 +44,17 @@ const Shop = () => {
 
       if (status === gmaps.places.PlacesServiceStatus.OK && place) {
         const location = place.geometry.location;
+
+        // make a fetch() to POST the place_id to /api/shop/<place_id>
+
+        const placeId = place.geometry.id;
         const placeLatLng = { lat: location.lat(), lng: location.lng() };
         const ratings = place.geometry.rating;
         console.log({ placeLatLng });
+        setPlace(placeId);
         setPlace(place);
         setPlaceLocation(placeLatLng);
         setRating(ratings);
-
-        // TODO: make a fetch() to POST the place_id to /api/shop/<place_id>
       }
     });
   };
