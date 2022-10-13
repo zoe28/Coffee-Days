@@ -87,6 +87,14 @@ def add_example_data():
     coffee_movement = Shop(google_map_id="ChIJoTMb3PKAhYARsXkQt469sBw") 
     # sightglass_coffee = Shop(google_map_id="") 
 
+
+    db.session.add_all([
+        leonard, liz, peter, howl, ])
+    db.session.add_all([
+        blue_bottle_coffee, ritual_coffee_roasters, andytown_coffee_roasters, philz_coffee, coffee_movement])
+    db.session.commit()
+
+
     # add sample Review data
     review1 = Review(
         rating_score = 5,
@@ -123,12 +131,6 @@ def add_example_data():
         shop_id = ritual_coffee_roasters.shop_id
     )
 
-
-    db.session.add_all([
-        leonard, liz, peter, howl, ])
-
-    db.session.add_all([
-        blue_bottle_coffee, ritual_coffee_roasters, andytown_coffee_roasters, philz_coffee, coffee_movement])
 
     db.session.add_all([
         review1, review2, review3, review4, review5])
