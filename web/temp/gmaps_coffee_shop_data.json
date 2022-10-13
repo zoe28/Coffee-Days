@@ -1,0 +1,1006 @@
+[
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "3995 24th St, San Francisco, CA 94114, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.751341,
+                "lng": -122.431709
+            },
+            "viewport": {
+                "south": 37.75004447010728,
+                "west": -122.4330679798928,
+                "north": 37.75274412989272,
+                "east": -122.4303683201073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Starbucks",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 640,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114762765792920401333\">Starbucks</a>"
+                ],
+                "width": 640
+            }
+        ],
+        "place_id": "ChIJj3orDxN-j4ARlytjvdmSwKU",
+        "plus_code": {
+            "compound_code": "QH29+G8 Noe Valley, San Francisco, CA",
+            "global_code": "849VQH29+G8"
+        },
+        "price_level": 2,
+        "rating": 4.2,
+        "reference": "ChIJj3orDxN-j4ARlytjvdmSwKU",
+        "types": [
+            "cafe",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 349,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "310 Broderick St, San Francisco, CA 94117, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.773433,
+                "lng": -122.438898
+            },
+            "viewport": {
+                "south": 37.77207542010728,
+                "west": -122.4403974798927,
+                "north": 37.77477507989272,
+                "east": -122.4376978201073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Peet's Coffee",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 1961,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/116237826672319293283\">SantoshiPacita Arcangel</a>"
+                ],
+                "width": 1960
+            }
+        ],
+        "place_id": "ChIJIYeMWK6AhYARWrloc7rm3OI",
+        "plus_code": {
+            "compound_code": "QHF6+9C Panhandle, San Francisco, CA",
+            "global_code": "849VQHF6+9C"
+        },
+        "price_level": 1,
+        "rating": 4.5,
+        "reference": "ChIJIYeMWK6AhYARWrloc7rm3OI",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 134,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "315 Linden St, San Francisco, CA 94102, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.7762264,
+                "lng": -122.4233363
+            },
+            "viewport": {
+                "south": 37.77495362010728,
+                "west": -122.4246358798927,
+                "north": 37.77765327989272,
+                "east": -122.4219362201073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Blue Bottle Coffee",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/110723398511236936015\">SooWan Jang</a>"
+                ],
+                "width": 3024
+            }
+        ],
+        "place_id": "ChIJSy28upiAhYARkoxpzFnW7b4",
+        "plus_code": {
+            "compound_code": "QHGG+FM Hayes Valley, San Francisco, CA",
+            "global_code": "849VQHGG+FM"
+        },
+        "price_level": 2,
+        "rating": 4.6,
+        "reference": "ChIJSy28upiAhYARkoxpzFnW7b4",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 792,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "4298 24th St, San Francisco, CA 94114, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.7511819,
+                "lng": -122.4383819
+            },
+            "viewport": {
+                "south": 37.74976107010728,
+                "west": -122.4397172798927,
+                "north": 37.75246072989272,
+                "east": -122.4370176201073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Philz Coffee",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 4640,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107003753579430049687\">Pramukh Shenoy</a>"
+                ],
+                "width": 2610
+            }
+        ],
+        "place_id": "ChIJXdV9NAx-j4ARbaEXhONbYvc",
+        "plus_code": {
+            "compound_code": "QH26+FJ Noe Valley, San Francisco, CA",
+            "global_code": "849VQH26+FJ"
+        },
+        "price_level": 2,
+        "rating": 4.5,
+        "reference": "ChIJXdV9NAx-j4ARbaEXhONbYvc",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 407,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "4094 18th St, San Francisco, CA 94114, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.761019,
+                "lng": -122.434666
+            },
+            "viewport": {
+                "south": 37.75961712010728,
+                "west": -122.4360160798928,
+                "north": 37.76231677989272,
+                "east": -122.4333164201073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Starbucks",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 640,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/113444545450141891662\">Starbucks</a>"
+                ],
+                "width": 640
+            }
+        ],
+        "place_id": "ChIJ4QCJMBt-j4AR-rbE4s78dcg",
+        "plus_code": {
+            "compound_code": "QH68+C4 The Castro, San Francisco, CA",
+            "global_code": "849VQH68+C4"
+        },
+        "price_level": 2,
+        "rating": 4,
+        "reference": "ChIJ4QCJMBt-j4AR-rbE4s78dcg",
+        "types": [
+            "cafe",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 407,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "1400 Mission St Suite 130, San Francisco, CA 94102, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.775284,
+                "lng": -122.41619
+            },
+            "viewport": {
+                "south": 37.77398312010728,
+                "west": -122.4175225798927,
+                "north": 37.77668277989272,
+                "east": -122.4148229201073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Peet's Coffee",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 2988,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/108745584882250029826\">Miguel Guzman</a>"
+                ],
+                "width": 5312
+            }
+        ],
+        "place_id": "ChIJw9P0rZ2AhYARlZWilcHQE3Y",
+        "plus_code": {
+            "compound_code": "QHGM+4G SoMa, San Francisco, CA",
+            "global_code": "849VQHGM+4G"
+        },
+        "price_level": 1,
+        "rating": 4.3,
+        "reference": "ChIJw9P0rZ2AhYARlZWilcHQE3Y",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 439,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "1690 Folsom St, San Francisco, CA 94103, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.770046,
+                "lng": -122.41615
+            },
+            "viewport": {
+                "south": 37.76881167010728,
+                "west": -122.4172957298927,
+                "north": 37.77151132989272,
+                "east": -122.4145960701073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Starbucks",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/112044584065520487323\">Christopher Elisondo</a>"
+                ],
+                "width": 3024
+            }
+        ],
+        "place_id": "ChIJgdjBbJ5_j4ARRIiNUdZapZw",
+        "plus_code": {
+            "compound_code": "QHCM+2G SoMa, San Francisco, CA",
+            "global_code": "849VQHCM+2G"
+        },
+        "price_level": 2,
+        "rating": 3.7,
+        "reference": "ChIJgdjBbJ5_j4ARRIiNUdZapZw",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 9,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "919 Cole St, San Francisco, CA 94117, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.7654742,
+                "lng": -122.4501304
+            },
+            "viewport": {
+                "south": 37.76411662010728,
+                "west": -122.4513736298927,
+                "north": 37.76681627989272,
+                "east": -122.4486739701073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Peet's Coffee",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/100045868391138481862\">Allison Bogisich</a>"
+                ],
+                "width": 3024
+            }
+        ],
+        "place_id": "ChIJJRt36k2HhYARhL1ekCczx28",
+        "plus_code": {
+            "compound_code": "QG8X+5W Cole Valley, San Francisco, CA",
+            "global_code": "849VQG8X+5W"
+        },
+        "price_level": 1,
+        "rating": 4.4,
+        "reference": "ChIJJRt36k2HhYARhL1ekCczx28",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 149,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "1799 Fulton St, San Francisco, CA 94117, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.775737,
+                "lng": -122.446293
+            },
+            "viewport": {
+                "south": 37.77443427010729,
+                "west": -122.4476602298927,
+                "north": 37.77713392989273,
+                "east": -122.4449605701073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Starbucks",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 640,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/117308813042178711674\">Starbucks</a>"
+                ],
+                "width": 640
+            }
+        ],
+        "place_id": "ChIJix8i1rKAhYARA-8jXL5KSYs",
+        "plus_code": {
+            "compound_code": "QHG3+7F North of the Panhandle, San Francisco, CA",
+            "global_code": "849VQHG3+7F"
+        },
+        "price_level": 2,
+        "rating": 3.9,
+        "reference": "ChIJix8i1rKAhYARA-8jXL5KSYs",
+        "types": [
+            "cafe",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 244,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "2257 Market St, San Francisco, CA 94114, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.7648035,
+                "lng": -122.4318792
+            },
+            "viewport": {
+                "south": 37.76351697010728,
+                "west": -122.4333547798927,
+                "north": 37.76621662989272,
+                "east": -122.4306551201072
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Peet's Coffee",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/116237826672319293283\">Santoshi Arcangel</a>"
+                ],
+                "width": 4032
+            }
+        ],
+        "place_id": "ChIJJ6NYXBx-j4ARM6C1C7UWIkY",
+        "plus_code": {
+            "compound_code": "QH79+W6 The Castro, San Francisco, CA",
+            "global_code": "849VQH79+W6"
+        },
+        "price_level": 1,
+        "rating": 4.3,
+        "reference": "ChIJJ6NYXBx-j4ARM6C1C7UWIkY",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 332,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "2020 Market St, San Francisco, CA 94114, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.769122,
+                "lng": -122.428353
+            },
+            "viewport": {
+                "south": 37.76756572010727,
+                "west": -122.4297616798927,
+                "north": 37.77026537989272,
+                "east": -122.4270620201072
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Starbucks",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 2420,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/108941169729625883066\">A Google User</a>"
+                ],
+                "width": 3492
+            }
+        ],
+        "place_id": "ChIJ831FJR5-j4ARGedmEcsir90",
+        "plus_code": {
+            "compound_code": "QH9C+JM Duboce Triangle, San Francisco, CA",
+            "global_code": "849VQH9C+JM"
+        },
+        "price_level": 2,
+        "rating": 3.9,
+        "reference": "ChIJ831FJR5-j4ARGedmEcsir90",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 94,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "3101 24th St, San Francisco, CA 94110, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.7523548,
+                "lng": -122.4143034
+            },
+            "viewport": {
+                "south": 37.75107432010728,
+                "west": -122.4156534298927,
+                "north": 37.75377397989272,
+                "east": -122.4129537701073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Philz Coffee",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111809545117033608954\">紀佩</a>"
+                ],
+                "width": 3024
+            }
+        ],
+        "place_id": "ChIJNZoFtUd-j4ARJedNpFz-mow",
+        "plus_code": {
+            "compound_code": "QH2P+W7 Mission District, San Francisco, CA",
+            "global_code": "849VQH2P+W7"
+        },
+        "price_level": 2,
+        "rating": 4.6,
+        "reference": "ChIJNZoFtUd-j4ARJedNpFz-mow",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 1309,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "549 Castro St, San Francisco, CA 94114, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.7601074,
+                "lng": -122.434792
+            },
+            "viewport": {
+                "south": 37.75874752010727,
+                "west": -122.4362162298927,
+                "north": 37.76144717989271,
+                "east": -122.4335165701073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Philz Coffee",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 2988,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/113677617185510925770\">呂武濃</a>"
+                ],
+                "width": 5312
+            }
+        ],
+        "place_id": "ChIJcfQ5MRp-j4ARn3eA9EH16OA",
+        "plus_code": {
+            "compound_code": "QH68+23 The Castro, San Francisco, CA",
+            "global_code": "849VQH68+23"
+        },
+        "price_level": 2,
+        "rating": 4.5,
+        "reference": "ChIJcfQ5MRp-j4ARn3eA9EH16OA",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 876,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "55 S Van Ness Ave, San Francisco, CA 94103, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.7739122,
+                "lng": -122.4186071
+            },
+            "viewport": {
+                "south": 37.77253967010727,
+                "west": -122.4200697798927,
+                "north": 37.77523932989272,
+                "east": -122.4173701201072
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Blue Bottle Coffee",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/113383859958122323675\">Kevin Kiningham</a>"
+                ],
+                "width": 4032
+            }
+        ],
+        "place_id": "ChIJ1VGyjmCBhYAR_pOL0q5shVs",
+        "plus_code": {
+            "compound_code": "QHFJ+HH SoMa, San Francisco, CA",
+            "global_code": "849VQHFJ+HH"
+        },
+        "price_level": 2,
+        "rating": 4.2,
+        "reference": "ChIJ1VGyjmCBhYAR_pOL0q5shVs",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 13,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "3139 Mission St, San Francisco, CA 94110, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.7470161,
+                "lng": -122.418717
+            },
+            "viewport": {
+                "south": 37.74571332010728,
+                "west": -122.4201743798927,
+                "north": 37.74841297989273,
+                "east": -122.4174747201073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "CoffeeShop",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/110999299981042326418\">Ali Wazir</a>"
+                ],
+                "width": 3024
+            }
+        ],
+        "place_id": "ChIJtSmBjEN-j4ARFdrmtjkXs5k",
+        "plus_code": {
+            "compound_code": "PHWJ+RG Bernal Heights, San Francisco, CA",
+            "global_code": "849VPHWJ+RG"
+        },
+        "price_level": 1,
+        "rating": 4.7,
+        "reference": "ChIJtSmBjEN-j4ARFdrmtjkXs5k",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 229,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "399 Golden Gate Ave, San Francisco, CA 94102, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.7812661,
+                "lng": -122.4169009
+            },
+            "viewport": {
+                "south": 37.78001862010728,
+                "west": -122.4183438298927,
+                "north": 37.78271827989272,
+                "east": -122.4156441701073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Philz Coffee",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 3567,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/103894976428228929305\">A Google User</a>"
+                ],
+                "width": 2671
+            }
+        ],
+        "place_id": "ChIJH7w1a5qAhYARSHYy_wjbPr4",
+        "plus_code": {
+            "compound_code": "QHJM+G6 Civic Center, San Francisco, CA",
+            "global_code": "849VQHJM+G6"
+        },
+        "price_level": 2,
+        "rating": 4.4,
+        "reference": "ChIJH7w1a5qAhYARSHYy_wjbPr4",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 560,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "244 Gough St, San Francisco, CA 94102, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.7756781,
+                "lng": -122.4225853
+            },
+            "viewport": {
+                "south": 37.77430207010728,
+                "west": -122.4240192798928,
+                "north": 37.77700172989272,
+                "east": -122.4213196201073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Planet Cafe",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 2048,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/104083375537437957866\">A Google User</a>"
+                ],
+                "width": 2048
+            }
+        ],
+        "place_id": "ChIJI1aNNZ-AhYARhbPQeOohxZs",
+        "plus_code": {
+            "compound_code": "QHGG+7X Civic Center, San Francisco, CA",
+            "global_code": "849VQHGG+7X"
+        },
+        "price_level": 1,
+        "rating": 4.8,
+        "reference": "ChIJI1aNNZ-AhYARhbPQeOohxZs",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 40,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "1901 Hayes St, San Francisco, CA 94117, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.7736261,
+                "lng": -122.4478481
+            },
+            "viewport": {
+                "south": 37.77233157010728,
+                "west": -122.4491806298928,
+                "north": 37.77503122989273,
+                "east": -122.4464809701073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Karma Cafe",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114110748769288918221\">Lark Liu</a>"
+                ],
+                "width": 3024
+            }
+        ],
+        "place_id": "ChIJOwCh3E6HhYAR6XPXxTITD5U",
+        "plus_code": {
+            "compound_code": "QHF2+FV Panhandle, San Francisco, CA",
+            "global_code": "849VQHF2+FV"
+        },
+        "rating": 4.5,
+        "reference": "ChIJOwCh3E6HhYAR6XPXxTITD5U",
+        "types": [
+            "cafe",
+            "bakery",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 99,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "427 Castro St, San Francisco, CA 94114, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.7621072,
+                "lng": -122.4349885
+            },
+            "viewport": {
+                "south": 37.76075242010727,
+                "west": -122.4363976298927,
+                "north": 37.76345207989272,
+                "east": -122.4336979701073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Castro Coffee Company",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 1152,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/104553241482824841282\">Manuel Rodriguez</a>"
+                ],
+                "width": 2048
+            }
+        ],
+        "place_id": "ChIJc5xaRRt-j4ARPhLIzF_ThoE",
+        "plus_code": {
+            "compound_code": "QH68+R2 The Castro, San Francisco, CA",
+            "global_code": "849VQH68+R2"
+        },
+        "price_level": 1,
+        "rating": 4.6,
+        "reference": "ChIJc5xaRRt-j4ARPhLIzF_ThoE",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 213,
+        "html_attributions": []
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "1300 Haight St, San Francisco, CA 94117, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.7705531,
+                "lng": -122.4438393
+            },
+            "viewport": {
+                "south": 37.76913207010728,
+                "west": -122.4451786298927,
+                "north": 37.77183172989272,
+                "east": -122.4424789701073
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "more_opening_hours": [],
+        "name": "Ritual Coffee Roasters",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/104006436556532291501\">Tomas Chen</a>"
+                ],
+                "width": 3024
+            }
+        ],
+        "place_id": "ChIJf2VE9ayAhYARcESkjlMUzfU",
+        "plus_code": {
+            "compound_code": "QHC4+6F Haight-Ashbury, San Francisco, CA",
+            "global_code": "849VQHC4+6F"
+        },
+        "price_level": 2,
+        "rating": 4.4,
+        "reference": "ChIJf2VE9ayAhYARcESkjlMUzfU",
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "user_ratings_total": 407,
+        "html_attributions": []
+    }
+]
