@@ -12,6 +12,9 @@ def index():
     return 'flask server'
 
 
+# 👤 User API routes - - - - -
+
+
 @app.route("/api/user/first")
 def get_first_user():
     first_user = User.query.first()
@@ -91,6 +94,28 @@ def create_user():
     }
 
 
+# ☕️ Shop API routes - - - - -
+
+@app.route("/api/shop/<place_id>", methods=['GET'])
+def get_shop(place_id):
+    '''
+    Get request from api
+    '''
+
+    shop = Shop.query.filter(Shop.google_map_id == place_id).first()
+    if shop is None:
+        return {}
+
+    return {
+        "shop_id": shop.shop_id,
+        "google_map_id": shop.google_map_id
+    } 
+        
+
+
+
+
+
 
 @app.route("/api/shop/<place_id>", methods=['POST'])
 def create_shop(place_id):
@@ -107,10 +132,26 @@ def create_shop(place_id):
     }
 
 
+# 💭 Review API routes - - - - -
+
+
 @app.route("/api/review/<place_id>", methods=['GET'])
 def get_reviews(place_id):
-    # TODO: query get all
-    return Review.query.all(place_id)
+    shop = Shop.query.filter(Shop.google_map_id == place_id).first()
+    reviews = Review.query.filter(Review.shop_id == shop.shop_id).all()
+    print(reviews)
+
+    reviewsJson = []
+    for review in reviews:
+        reviewData = {
+            'review_id': review.review_id,
+            'rating_score': review.rating_score,
+            'comment': review.comment,
+            'user_id': review.user_id,
+            'shop_id': review.shop_id
+        }
+        reviewsJson.append(reviewData)
+    return reviewsJson
 
 
 @app.route("/api/review/<place_id>", methods=['POST'])
@@ -118,13 +159,16 @@ def create_review(place_id):
     """ Create a new review"""
     
     request_body = request.get_json()
+    
+    user = User.query.first()
+    shop = Shop.query.filter(Shop.google_map_id == place_id).first()
+    print(user, shop)
 
     review = Review(
-        review_id=request_body['review_id'], 
         rating_score=request_body['rating_score'], 
         comment=request_body['comment'], 
-        user_id= "fc06e892-6c5a-42e4-ac53-d4842e4936e1", # 
-        shop_id=place_id,
+        user_id= user.user_id, # 
+        shop_id=shop.shop_id,
     )
 
     db.session.add(review)
