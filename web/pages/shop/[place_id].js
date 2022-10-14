@@ -4,6 +4,7 @@ import {
   Form,
   Heading,
   Columns,
+  Message,
 } from "react-bulma-components";
 import {
   GoogleMap,
@@ -24,9 +25,57 @@ const Shop = () => {
   const { place_id } = router.query;
 
   const [place, setPlace] = useState({});
-  const [placeId, setPlaceId] = useState({});
   const [placeLocation, setPlaceLocation] = useState({ lat: 0, lng: 0 });
-  const [rating, setRating] = useState(0);
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    /* 
+    1. make a fetch call to GET the data from `/api/shop/<place_id>`
+    2. if the response is null/undefined
+    3. make a fetch call to POST the `place_id` to `/api/shop/<place_id>`
+    4. this creates the shop in the database
+     */
+
+    fetch(`/api/shop/${place_id}`)
+      .then((res) => res.json())
+      .then((jsonData) => {
+        // if the shop doesn't exist
+        console.log(jsonData);
+
+        if (!jsonData.shop_id) {
+          // create the shop
+          fetch(`/api/shop/${place_id}`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+            .then((response) => {
+              return response.json();
+            })
+            .then((jsonData) => {
+              console.log(jsonData);
+            });
+        } else {
+          fetch(`/api/review/${place_id}`)
+            .then((res) => res.json())
+            .then((jsonData) => {
+              console.log("review:", jsonData);
+              setReviews(jsonData);
+            });
+        }
+      });
+
+    // later TODO: get a list of reviews for the shop
+    /*
+    fetch(`/api/review/${place_id}`)
+      .then((res) => res.json())
+      .then((jsonData) => {
+        console.log(jsonData);
+        setReviews(jsonData.reviews);
+      });
+      */
+  }, []); // run this once when the component is first rendered
 
   const handleMapLoad = (map) => {
     console.log({ map });
@@ -51,13 +100,13 @@ const Shop = () => {
         const placeLatLng = { lat: location.lat(), lng: location.lng() };
         const ratings = place.geometry.rating;
         console.log({ placeLatLng });
-        setPlace(placeId);
         setPlace(place);
         setPlaceLocation(placeLatLng);
-        setRating(ratings);
       }
     });
   };
+
+  console.log({ reviews });
 
   return (
     <Container>
@@ -88,18 +137,26 @@ const Shop = () => {
           </GoogleMap>
         </Columns.Column>
         <Columns.Column>
-          <Heading subtitle>
-            Reviews
-            <form>
-              <Form.Field>
-                <Form.Control>
-                  <Link href={`/review/${place_id}`}>
-                    <Button color="warning">Add a review </Button>
-                  </Link>
-                </Form.Control>
-              </Form.Field>
-            </form>
-          </Heading>
+          <Heading subtitle>Reviews</Heading>
+          {reviews.map((review) => {
+            return (
+              <Message color="warning">
+                <Message.Header>
+                  <span>Rating: {review.rating_score}</span>
+                </Message.Header>
+                <Message.Body>{review.comment}</Message.Body>
+              </Message>
+            );
+          })}
+          <form>
+            <Form.Field>
+              <Form.Control>
+                <Link href={`/review/${place_id}`}>
+                  <Button color="warning">Add a review </Button>
+                </Link>
+              </Form.Control>
+            </Form.Field>
+          </form>
         </Columns.Column>
       </Columns>
     </Container>

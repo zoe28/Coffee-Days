@@ -11,7 +11,7 @@ const Review = () => {
 
   // hardcode a `user_id`
 
-  const [ratingScore, setRatingScore] = useState("");
+  const [ratingScore, setRatingScore] = useState("1");
   const [comment, setComment] = useState("");
   const [userId, setUserId] = useState("");
   const [shopId, setShopId] = useState("");
@@ -26,7 +26,7 @@ const Review = () => {
       shop_id: shopId,
     };
 
-    fetch("/api/review/place_id", {
+    fetch(`/api/review/${place_id}`, {
       method: "POST",
       body: JSON.stringify(body),
       headers: {
@@ -41,6 +41,7 @@ const Review = () => {
       })
       .then((data) => {
         console.log(data);
+        router.back();
       });
   };
 
