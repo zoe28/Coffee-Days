@@ -47,7 +47,7 @@ const Review = () => {
 
   return (
     <Container>
-      <Heading> Add a review: {place_id}</Heading>
+      <Heading> Add a review</Heading>
       <form>
         <Form.Field>
           <Form.Label>Select your rating</Form.Label>
