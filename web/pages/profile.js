@@ -1,32 +1,32 @@
-import React, {useEffect, useState} from 'react';
-import { Form, Icon, Block, Button, Container } from 'react-bulma-components';
+import React, { useEffect, useState } from "react";
+import { Form, Icon, Block, Button, Container } from "react-bulma-components";
+import { getCurrentUser } from "../lib/auth.js";
 
-import 'bulma/css/bulma.min.css';
-
+import "bulma/css/bulma.min.css";
+import { useRouter } from "next/router.js";
 
 const Profile = () => {
-  
-  const [userId, setUserId] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('')
-  const [email, setEmail] = useState('');
-
+  const router = useRouter();
+  const [userId, setUserId] = useState(getCurrentUser());
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
-    fetch('/api/user/first')
-      .then((res) => res.json())
-      .then((jsonData) => {
-        console.log(jsonData)
-        setUserId(jsonData.id)
-        setFirstName(jsonData.first_name)
-        setLastName(jsonData.last_name)
-        setEmail(jsonData.email) 
-      })
-  }, []) // run this once when the component is first rendered
+    if (userId) {
+      fetch(`/api/user/${userId}`)
+        .then((res) => res.json())
+        .then((jsonData) => {
+          console.log(jsonData);
+          setUserId(jsonData.id);
+          setFirstName(jsonData.first_name);
+          setLastName(jsonData.last_name);
+          setEmail(jsonData.email);
+        });
+    }
+  }, []); // run this once when the component is first rendered
 
-
-
-  const handleClick = (evt) => {
+  const handleUpdateClick = (evt) => {
     evt.preventDefault();
 
     const body = {
@@ -36,16 +36,23 @@ const Profile = () => {
     };
 
     fetch(`/api/user/${userId}`, {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify(body),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data)
-    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
+  const handleLogOutClick = (evt) => {
+    evt.preventDefault();
+
+    localStorage.removeItem("user_id");
+    router.push("/");
   };
 
   return (
@@ -53,50 +60,59 @@ const Profile = () => {
       <form>
         <Form.Field>
           <Form.Label>First name</Form.Label>
-            <Form.Input
-              value={firstName}
-              onChange={(e) => {
-                return setFirstName(e.target.value);
-              }}
-            />
+          <Form.Input
+            value={firstName}
+            onChange={(e) => {
+              return setFirstName(e.target.value);
+            }}
+          />
         </Form.Field>
 
         <Form.Field>
           <Form.Label>Last name</Form.Label>
-            <Form.Input
-              value={lastName}
-              onChange={(e) => {
-                return setLastName(e.target.value);
-              }}
-            />
+          <Form.Input
+            value={lastName}
+            onChange={(e) => {
+              return setLastName(e.target.value);
+            }}
+          />
         </Form.Field>
 
         <Form.Field>
           <Form.Label>Email</Form.Label>
-            <Form.Input
-              value={email}
-              onChange={(e) => {
-                return setEmail(e.target.value);
-              }}
-            />
+          <Form.Input
+            value={email}
+            onChange={(e) => {
+              return setEmail(e.target.value);
+            }}
+          />
         </Form.Field>
 
         <Form.Field kind="group">
-          
           <Form.Control>
             <Button
               color="warning"
               onClick={(evt) => {
-                return handleClick(evt);
+                return handleUpdateClick(evt);
               }}
             >
               Update
             </Button>
           </Form.Control>
+
+          <Form.Control>
+            <Button
+              onClick={(evt) => {
+                return handleLogOutClick(evt);
+              }}
+            >
+              Log out
+            </Button>
+          </Form.Control>
         </Form.Field>
       </form>
     </Container>
-  );  
+  );
 };
 
 export default Profile;
