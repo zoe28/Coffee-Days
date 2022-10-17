@@ -2,6 +2,7 @@
 Define database models
 """
 
+from typing_extensions import Required
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.dialects.postgresql import UUID
 import uuid
@@ -18,7 +19,7 @@ class User(db.Model):
     first_name = db.Column(db.String(64), nullable=False)
     last_name = db.Column(db.String(64), nullable=False)
     email = db.Column(db.String(128), nullable=False, unique=True)
-
+    password = db.Column(db.String(128), nullable=False)
     reviews = db.relationship("Review", back_populates="user")
 
     def __repr__(self):
@@ -72,10 +73,10 @@ def add_example_data():
     Review.query.delete()
 
     # Add sample users
-    leonard = User(first_name='Leonard', last_name='Woods', email="leonard@gmail.com")
-    liz = User(first_name='Liz', last_name='Suuu', email="lizss@gmail.com")
-    peter = User(first_name='Peter', last_name='Collins', email="peter@gmail.com")
-    howl = User(first_name='Howl', last_name='Takuya', email="howl@gmail.com")
+    leonard = User(first_name='Leonard', last_name='Woods', email="leonard@gmail.com", password="123")
+    liz = User(first_name='Liz', last_name='Suuu', email="lizss@gmail.com", password="223")
+    peter = User(first_name='Peter', last_name='Collins', email="peter@gmail.com", password="290")
+    howl = User(first_name='Howl', last_name='Takuya', email="howl@gmail.com", password="909")
 
 
     # add sample Shop data with the Google Maps `result.place_id`
