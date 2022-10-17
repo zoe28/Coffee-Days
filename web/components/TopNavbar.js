@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container, Navbar } from "react-bulma-components";
+import { isLoggedIn } from "../lib/auth.js";
 
 import styles from "../styles/navbar.module.css";
 
@@ -23,8 +24,10 @@ const TopNavbar = () => {
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Container className="navbar-end" align="end">
-            <Navbar.Item href="/profile">Profile</Navbar.Item>
-            <Navbar.Item href="/sign-up">Sign Up</Navbar.Item>
+            {isLoggedIn() && <Navbar.Item href="/profile">Profile</Navbar.Item>}
+            {!isLoggedIn() && (
+              <Navbar.Item href="/sign-up">Sign Up</Navbar.Item>
+            )}
           </Navbar.Container>
         </Navbar.Menu>
       </Container>
