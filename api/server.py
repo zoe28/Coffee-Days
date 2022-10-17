@@ -80,7 +80,12 @@ def create_user():
     print(request_body)
 
     # create a new instance of the User model
-    user = User(first_name=request_body['first_name'], last_name=request_body['last_name'], email=request_body['email'])
+    user = User(
+        first_name=request_body['first_name'], 
+        last_name=request_body['last_name'], 
+        email=request_body['email'], 
+        password=request_body['password']
+    )
 
     db.session.add(user)
     db.session.commit()
