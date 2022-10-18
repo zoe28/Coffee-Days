@@ -150,7 +150,9 @@ const MapContainer = () => {
 const Index = () => {
   return (
     <Container>
-      <Heading size={1}>Coffee Days</Heading>
+      <Heading color="$dark" size={2.5}>
+        Everyday is a coffee day
+      </Heading>
       <MapContainer />
     </Container>
   );

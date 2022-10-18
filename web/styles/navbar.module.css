@@ -1,3 +1,14 @@
 .topNavbar {
   margin-bottom: 1em;
 }
+
+.logoWord {
+  color: #865439;
+  font-size: 1.7em;
+  font-weight: 700;
+}
+
+.topNavbar .word {
+  color: #865439;
+  font-weight: 500;
+}

@@ -7,6 +7,8 @@ import styles from "../styles/navbar.module.css";
 
 const TopNavbar = () => {
   const navbarClassName = `${styles.topNavbar} has-shadow`;
+  const logoClassName = `${styles.logoWord}`;
+
   return (
     <Navbar className={navbarClassName}>
       <Container>
@@ -18,15 +20,21 @@ const TopNavbar = () => {
               width="216"
               height="216"
             />
-            <span className="title is-4 ml-1">Coffee Days</span>
+            <span className={logoClassName}>Coffee Days</span>
           </Navbar.Item>
           <Navbar.Burger />
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Container className="navbar-end" align="end">
-            {isLoggedIn() && <Navbar.Item href="/profile">Profile</Navbar.Item>}
+            {isLoggedIn() && (
+              <Navbar.Item href="/profile" className={styles.word}>
+                Profile
+              </Navbar.Item>
+            )}
             {!isLoggedIn() && (
-              <Navbar.Item href="/sign-up">Sign Up</Navbar.Item>
+              <Navbar.Item href="/sign-up" className={styles.word}>
+                Sign Up
+              </Navbar.Item>
             )}
           </Navbar.Container>
         </Navbar.Menu>
