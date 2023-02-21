@@ -1,2 +1,2 @@
 web: cd web && npm run build && npm start
-api: cd api && python app.py
+api: cd api && gunicorn server:app
