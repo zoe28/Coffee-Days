@@ -1,2 +1,2 @@
-web: cd web && npm run build && npm start
-api: cd api && gunicorn server:app
+web: npm run build && npm start
+api: gunicorn --chdir api server:app
