@@ -2,6 +2,7 @@
 Define database models
 """
 
+import os
 from typing_extensions import Required
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.dialects.postgresql import UUID
@@ -141,7 +142,7 @@ def add_example_data():
 def connect_to_db(app):
     """Connect the database to our Flask app."""
     
-    app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql:///coffee_shop"
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
     app.config["SQLALCHEMY_ECHO"] = True
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 

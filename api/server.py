@@ -1,15 +1,18 @@
 """Server for coffee shop ratings website."""
 
+import os
 from flask import Flask, jsonify, request
 from models import connect_to_db, db, User, Shop, Review
 
 
 app = Flask(__name__)
 
+db.init_app(app)
+
 
 @app.route("/")
 def index():
-    return 'flask server'
+    return 'A very cool Flask API'
 
 
 # 👤 User API routes - - - - -
